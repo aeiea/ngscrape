@@ -43,4 +43,15 @@ class Scraper:
         _soup = bs4.BeautifulSoup(_gameHTML.content, 'html.parser')
         if self.debug:
             print('NGScrape: Made request to ' + url + ' and got ' + _gameHTML.content + ' with status code ' + _gameHTML.status_code)
-        
+        '''
+        NOTE: Newgrounds site format has the flash game url inside <script> tags, with the varible 'embed_controller'.
+        Example:
+        var embed_controller = new embedController([{"url":"https:\/\/uploads.ungrounded.net\/59000\/59593_alien_booya.swf?f1101313499","is_published":true, ... );
+                            0                          1  2                                     [3]
+        '''
+        _scripts = _soup.find_all('script')
+        for i in _scripts:
+            if 'var embed_controller = new embedController([{"url":"' in i.string:
+                _gameLink = i.string.split('"')[3]
+                if self.debug:
+                    print('NGScrape: Found flash game link:' + _gameLink)
