@@ -67,5 +67,6 @@ class Scraper:
             print('NGScrape: Downloaded swf file to ' + download + '/' + filename)
                 
 if __name__ == '__main__':
+    import sys
     scraper = Scraper(debug = True)
-    scraper.scrape_game_by_url('https://www.newgrounds.com/portal/view/59593', 'testdir', 'game.swf')
+    scraper.scrape_game_by_url(sys.argv[1], sys.argv[2], sys.argv[3])
