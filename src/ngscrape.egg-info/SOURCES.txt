@@ -1,0 +1,9 @@
+LICENSE
+pyproject.toml
+readme.md
+src/ngscrape.py
+src/ngscrape.egg-info/PKG-INFO
+src/ngscrape.egg-info/SOURCES.txt
+src/ngscrape.egg-info/dependency_links.txt
+src/ngscrape.egg-info/requires.txt
+src/ngscrape.egg-info/top_level.txt
