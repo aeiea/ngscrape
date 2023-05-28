@@ -1,7 +1,7 @@
 Metadata-Version: 2.1
 Name: ngscrape
-Version: 1.0.0
-Summary: Newgrounds flash game scraper
+Version: 1.0.1
+Summary: Newgrounds flash game scraper powered by bs4 and requests
 Author-email: aeiea <dpthn@proton.me>
 License:                     GNU AFFERO GENERAL PUBLIC LICENSE
                                Version 3, 19 November 2007
@@ -666,7 +666,7 @@ License:                     GNU AFFERO GENERAL PUBLIC LICENSE
         <https://www.gnu.org/licenses/>.
         
 Project-URL: Homepage, https://github.com/aeiea/ngscrape
-Keywords: flash,newgrounds,scraper
+Keywords: flash,newgrounds,scraper,games,opensource
 Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
 Classifier: Programming Language :: Python
 Classifier: Programming Language :: Python :: 3
