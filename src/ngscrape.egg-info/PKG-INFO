@@ -667,7 +667,7 @@ License:                     GNU AFFERO GENERAL PUBLIC LICENSE
         
 Project-URL: Homepage, https://github.com/aeiea/ngscrape
 Keywords: flash,newgrounds,scraper
-Classifier: License :: OSI Approved :: GNU Affero General Public License
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
 Classifier: Programming Language :: Python
 Classifier: Programming Language :: Python :: 3
 Requires-Python: >=3.7
