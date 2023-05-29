@@ -670,7 +670,7 @@ Keywords: flash,newgrounds,scraper,games,opensource
 Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
 Classifier: Programming Language :: Python
 Classifier: Programming Language :: Python :: 3
-Requires-Python: >=3.7
+Requires-Python: >=3.0
 Description-Content-Type: text/markdown
 License-File: LICENSE
 

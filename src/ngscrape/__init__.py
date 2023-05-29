@@ -2,8 +2,7 @@
 # NGScrape is licensed under the GNU Affero General Public License v3.0. If a copy is not included with this file, you can find one at https://www.gnu.org/licenses/agpl-3.0.en.html.
 # The source code can be found at https://github.com/aeiea/ngscrape. Please star is this was useful, and make a pull request if you find this useful!
 
-import bs4
-import requests
+import bs4, requests, os
 class Scraper:
     '''
     # NGScrape
@@ -59,10 +58,14 @@ class Scraper:
         _scripts = _soup.find_all('script')
         for i in _scripts:
             if 'var embed_controller = new embedController([{"url":"' in i.get_text():
-                _gameLink = i.get_text().split('"')[3]
+                _gameLink: str = i.get_text().split('"')[3]
                 if self.debug:
                     print('NGScrape: Found flash game link ' + _gameLink)
-        open(download + '/' + filename, 'wb').write(requests.get(_gameLink, allow_redirects = True).content)
+        try:
+            os.mkdir(download)
+        except:
+            pass
+        open(download + '/' + filename, 'wb').write(requests.get(_gameLink.replace('\\', ''), allow_redirects = True).content)
         if self.debug:
             print('NGScrape: Downloaded swf file to ' + download + '/' + filename)
                 
