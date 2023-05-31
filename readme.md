@@ -8,6 +8,9 @@ Please star is this was useful!
 Functions:
 - `__init__(debug: bool = False) -> None`
     - Start a new NGScrape Instance.
+    - Parameters:
+        - debug (bool) = False: Enable/Disable debug mode
+        - cache (bool) = False: Enable/Disable caching
 - `scrape_game_by_url(url: str, download: str, filename: str) -> None`
     - Scrape a flash game by url.
     - Parameters:
@@ -28,7 +31,7 @@ Functions:
         - url (str): The URL of the flash game. For example, the URL for Alien Homonid is `https://www.newgrounds.com/portal/view/59593`.
     - Example parameters:
         - `url = 'https://www.newgrounds.com/portal/view/59593'`
-    - Example output with debug mode:`
+    - Example output with debug mode:
         - NGScrape: Made request to `https://www.newgrounds.com/portal/view/59593` and got status code `200`
         - NGScrape: Found game description "Blast FBI agents in this Metal Slug style shooter!"
 - `scrape_card_by_url(self, url: str, download: str, filename: str) -> str`
@@ -44,4 +47,4 @@ Functions:
     - Example output with debug mode:
         - NGScrape: Made request to `https://www.newgrounds.com/portal/view/59593` and got status code `200`
         - NGScrape: Found card link `https://picon.ngfiles.com/59000/flash_59593_card.png?f1607717241`
-        - NGScrape: Downloaded `swf` file to `testdir/card.png`
+        - NGScrape: Downloaded `png` file to `testdir/card.png`
