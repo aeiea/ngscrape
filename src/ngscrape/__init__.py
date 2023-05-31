@@ -132,9 +132,10 @@ class Scraper:
             os.mkdir(download)
         except:
             pass
-        if self.cachedsites[url] != None:
+        try:
+            self.cachedsites[url]
             _gameHTML = self.cachedsites[url]
-        else:
+        except:
             if self.cache:
                 self.cachedsites[url] = _gameHTML
             _gameHTML = requests.get(url)
@@ -172,9 +173,10 @@ class Scraper:
             - NGScrape: Found game description "Blast FBI agents in this Metal Slug style shooter!"
         '''
 
-        if self.cachedsites[url] != None:
+        try:
+            self.cachedsites[url]
             _gameHTML = self.cachedsites[url]
-        else:
+        except:
             if self.cache:
                 self.cachedsites[url] = _gameHTML
             _gameHTML = requests.get(url)
