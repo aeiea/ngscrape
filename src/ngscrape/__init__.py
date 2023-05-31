@@ -75,6 +75,7 @@ class Scraper:
         '''
         Scrape a flash game's card by url. The file extention will be automatically determined.
         Returns the name of the card file.
+        
         Parameters:
             url (str): The URL of the flash game. For example, the URL for Alien Homonid is https://www.newgrounds.com/portal/view/59593.
             download (str): The directory to download the file to.
@@ -117,8 +118,9 @@ class Scraper:
         return filename + _imageFiletype
     def scrape_desc_by_url(self, url: str) -> str:
         '''
-        Scrape a flash game's description by url. The file extention will be automatically determined.
+        Scrape a flash game's description by url.
         Returns the description of the game.
+        
         Parameters:
             url (str): The URL of the flash game. For example, the URL for Alien Homonid is https://www.newgrounds.com/portal/view/59593.
         Example parameters:
