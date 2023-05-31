@@ -62,6 +62,7 @@ class Scraper:
         '''
         self.debug = debug
         self.cache = cache
+        self.cachedsites = {}
         return
     
     def scrape_game_by_url(self, url: str, download: str, filename: str) -> None:
@@ -80,9 +81,10 @@ class Scraper:
             - NGScrape: Found flash game link `https:\/\/uploads.ungrounded.net\/59000\/59593_alien_booya.swf?f1101313499`
             - NGScrape: Downloaded swf file to testdir/game.swf
         '''
-        if self.cachedsites[url] != None:
+        try:
+            self.cachedsites[url]
             _gameHTML = self.cachedsites[url]
-        else:
+        except:
             if self.cache:
                 self.cachedsites[url] = _gameHTML
             _gameHTML = requests.get(url)
