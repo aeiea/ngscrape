@@ -15,7 +15,10 @@ class Scraper:
     Functions:
     - `__init__(debug: bool = False) -> None`
         - Start a new NGScrape Instance.
-    - `scrape_game_by_url(url: str, download: str, filename: str) -> None`
+        - Parameters:
+            - debug (bool) = False: Enable/Disable debug mode
+            - cache (bool) = False: Enable/Disable caching
+    - `scrape_game(url: str, download: str, filename: str) -> None`
         - Scrape a flash game by url.
         - Parameters:
             - url (str): The URL of the flash game. For example, the URL for Alien Homonid is `https://www.newgrounds.com/portal/view/59593`.
@@ -29,7 +32,7 @@ class Scraper:
             - NGScrape: Made request to `https://www.newgrounds.com/portal/view/59593` and got status code `200`
             - NGScrape: Found flash game link `https:\/\/uploads.ungrounded.net\/59000\/59593_alien_booya.swf?f1101313499`
             - NGScrape: Downloaded swf file to testdir/game.swf
-    - `scrape_desc_by_url(self, url: str) -> str`
+    - `scrape_desc(self, url: str) -> str`
         - Scrape a flash game's description by url. Returns the description of the game.
         - Parameters:
             - url (str): The URL of the flash game. For example, the URL for Alien Homonid is `https://www.newgrounds.com/portal/view/59593`.
@@ -38,7 +41,7 @@ class Scraper:
         - Example output with debug mode:
             - NGScrape: Made request to `https://www.newgrounds.com/portal/view/59593` and got status code `200`
             - NGScrape: Found game description "Blast FBI agents in this Metal Slug style shooter!"
-    - `scrape_card_by_url(self, url: str, download: str, filename: str) -> str`
+    - `scrape_card(self, url: str, download: str, filename: str) -> str`
         - Scrape a flash game's card by url. The file extention will be automatically determined. Returns the name of the card file.
         - Parameters:
             - url (str): The URL of the flash game. For example, the URL for Alien Homonid is `https://www.newgrounds.com/portal/view/59593`.
@@ -65,7 +68,7 @@ class Scraper:
         self.cachedsites = {}
         return
     
-    def scrape_game_by_url(self, url: str, download: str, filename: str) -> None:
+    def scrape_game(self, url: str, download: str, filename: str) -> None:
         '''
         Scrape a flash game by url.
         - Parameters:
@@ -112,7 +115,7 @@ class Scraper:
         if self.debug:
             print('NGScrape: Downloaded swf file to ' + download + '/' + filename)
             
-    def scrape_card_by_url(self, url: str, download: str, filename: str) -> str:
+    def scrape_card(self, url: str, download: str, filename: str) -> str:
         '''
         Scrape a flash game's card by url. The file extention will be automatically determined. Returns the name of the card file.
         - Parameters:
@@ -161,7 +164,7 @@ class Scraper:
         if self.debug:
             print('NGScrape: Downloaded swf file to ' + download + '/' + filename + _imageFiletype)
         return filename + _imageFiletype
-    def scrape_desc_by_url(self, url: str) -> str:
+    def scrape_desc(self, url: str) -> str:
         '''
         Scrape a flash game's description by url. Returns the description of the game.
         - Parameters:
@@ -199,9 +202,9 @@ if __name__ == '__main__':
     import sys
     scraper = Scraper(debug = True)
     try:
-        scraper.scrape_game_by_url(sys.argv[1], sys.argv[2], sys.argv[3])
-        scraper.scrape_card_by_url(sys.argv[1], sys.argv[2], sys.argv[3].replace('.swf', ''))
-        scraper.scrape_desc_by_url(sys.argv[1])
+        scraper.scrape_game(sys.argv[1], sys.argv[2], sys.argv[3])
+        scraper.scrape_card(sys.argv[1], sys.argv[2], sys.argv[3].replace('.swf', ''))
+        scraper.scrape_desc(sys.argv[1])
     except:
         print('ngscrape [newgrounds url, should be formatted like this: https://www.newgrounds.com/portal/view/xxxxx] [directory to save to] [file to save to]')
         exit(1)

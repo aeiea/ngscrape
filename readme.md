@@ -11,7 +11,7 @@ Functions:
     - Parameters:
         - debug (bool) = False: Enable/Disable debug mode
         - cache (bool) = False: Enable/Disable caching
-- `scrape_game_by_url(url: str, download: str, filename: str) -> None`
+- `scrape_game(url: str, download: str, filename: str) -> None`
     - Scrape a flash game by url.
     - Parameters:
         - url (str): The URL of the flash game. For example, the URL for Alien Homonid is `https://www.newgrounds.com/portal/view/59593`.
@@ -25,7 +25,7 @@ Functions:
         - NGScrape: Made request to `https://www.newgrounds.com/portal/view/59593` and got status code `200`
         - NGScrape: Found flash game link `https:\/\/uploads.ungrounded.net\/59000\/59593_alien_booya.swf?f1101313499`
         - NGScrape: Downloaded swf file to testdir/game.swf
-- `scrape_desc_by_url(self, url: str) -> str`
+- `scrape_desc(self, url: str) -> str`
     - Scrape a flash game's description by url. Returns the description of the game.
     - Parameters:
         - url (str): The URL of the flash game. For example, the URL for Alien Homonid is `https://www.newgrounds.com/portal/view/59593`.
@@ -34,7 +34,7 @@ Functions:
     - Example output with debug mode:
         - NGScrape: Made request to `https://www.newgrounds.com/portal/view/59593` and got status code `200`
         - NGScrape: Found game description "Blast FBI agents in this Metal Slug style shooter!"
-- `scrape_card_by_url(self, url: str, download: str, filename: str) -> str`
+- `scrape_card(self, url: str, download: str, filename: str) -> str`
     - Scrape a flash game's card by url. The file extention will be automatically determined. Returns the name of the card file.
     - Parameters:
         - url (str): The URL of the flash game. For example, the URL for Alien Homonid is `https://www.newgrounds.com/portal/view/59593`.
