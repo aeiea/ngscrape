@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: ngscrape
-Version: 3.0.2
+Version: 3.0.3
 Summary: Newgrounds flash game scraper powered by bs4 and requests
 Author-email: aeiea <dpthn@proton.me>
 License:                     GNU AFFERO GENERAL PUBLIC LICENSE
@@ -682,7 +682,7 @@ NGScrape is licensed under the GNU Affero General Public License v3.0. If a copy
 Please star is this was useful!
 
 Functions:
-- `__init__(debug: bool = False) -> None`
+- `__init__(self, debug: bool = False, cache: bool = False, parser: str = 'html.parser') -> None`
     - Start a new NGScrape Instance.
         - Parameters:
             - debug (bool) = False: Enable/Disable debug mode

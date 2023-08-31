@@ -13,7 +13,7 @@ class Scraper:
     Please star is this was useful!
 
     Functions:
-    - `__init__(debug: bool = False) -> None`
+    - `__init__(self, debug: bool = False, cache: bool = False, parser: str = 'html.parser') -> None`
         - Start a new NGScrape Instance.
             - Parameters:
                 - debug (bool) = False: Enable/Disable debug mode

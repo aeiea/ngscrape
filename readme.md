@@ -6,7 +6,7 @@ NGScrape is licensed under the GNU Affero General Public License v3.0. If a copy
 Please star is this was useful!
 
 Functions:
-- `__init__(debug: bool = False) -> None`
+- `__init__(self, debug: bool = False, cache: bool = False, parser: str = 'html.parser') -> None`
     - Start a new NGScrape Instance.
         - Parameters:
             - debug (bool) = False: Enable/Disable debug mode
